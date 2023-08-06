@@ -4,4 +4,3 @@ TODOs:
 
 - Adjust photo layouts
 - Adjust favicon
-- Add additional documents (e.g., communication)

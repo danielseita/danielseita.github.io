@@ -53,11 +53,17 @@
             <a href="https://github.com/DanielTakeshi">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="https://scholar.google.com/citations?hl=en&user=ECHSnpYAAAAJ">G. Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="data/Daniel_Seita_CV.pdf">C. Vitae</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="data/Research_Statement_2023.pdf">Research Statement</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <a href="https://docs.google.com/document/d/12XDLkryhPt4XlrGDyjDQ7t2pPkd3Z3jwTLwS2C6O_w4/edit">Communication Tips</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:toggle_international()">To International Students</a>
+
             <div id="more-bio" style="display: None">
               <br>
               <p>Daniel Seita is an Assistant Professor in the <a href="https://www.cs.usc.edu/">Computer Science department</a> at the <a href="https://www.usc.edu/">University of Southern California</a> and the director of the <a href="https://slurm-lab.github.io/">Sensing, Learning, and Understanding for Robotic Manipulation (SLURM) Lab</a>. His research interests are in computer vision and machine learning for robot manipulation, with a focus on developing novel methods to improve manipulation of challenging deformable objects. Daniel was previously a postdoc at <a href="https://www.ri.cmu.edu/">Carnegie Mellon University's Robotics Institute</a> and holds a PhD in computer science from the <a href="https://www.berkeley.edu/">University of California, Berkeley</a>. He received undergraduate degrees in math and computer science from <a href="https://www.williams.edu/">Williams College</a>. Daniel's research has been supported by a six-year Graduate Fellowship for STEM Diversity and by a two-year Berkeley Fellowship. He has the Honorable Mention for Best Paper award at UAI 2017, was an RSS 2022 Pioneer, and has presented work at premier robotics conferences such as ICRA, IROS, RSS, and CoRL.</p>
               <br>
             </div>
+
             <div id="more-contact" style="display: None">
               <br>
               <p>seita@usc.edu</p>
@@ -70,6 +76,15 @@
               <p>There is no need to address me as "Dear Sir," "Esteemed Professor," "Respected Professor," or other excessivelly formal phrases that might be used in mass emails (and which I get in my inbox). You can just write "Prof. Seita," "Professor Seita," or just "Daniel." For in-person conversations, I believe my last name is pronounced like "say-ta" with two syllables.</p>
               <br>
             </div>
+
+            <div id="more-international" style="display: None">
+              <br>
+              <p>I do my best to learn about other cultures, countries, and governments, by reading and consulting a wide variety of references. With respect to any group's political leadership, there are a range of policy issues to which I might agree or disagree. I am careful to not conflate a country's political leadership and the opinions of a citizen of that country.</p>
+              <br>
+              <p>I fully support people from all across the world coming to our country's schools and institutions. I think the highly international nature of Robotics and AI is one of its best qualities, and I hope it remains like this. I am not afraid to criticize or critique the U.S. government if they put up roadblocks to this. Students who come from abroad can expect to have me as an ally.</p>
+              <br>
+            </div>
+
           </p>
         </div>
         <div id="intro-image">
@@ -84,6 +99,7 @@
         <button class="button" data-filter=".talk">Talks</button>
         <button class="button" data-filter=".teaching">Teaching</button>
         <button class="button" data-filter=".misc">Service</button>
+        <button class="button" data-filter=".other">Other</button>
       </div>
 
       <div class="grid">
@@ -261,6 +277,14 @@
           <p class="date">2017+</p>Primary maintainer, <a href="https://bair.berkeley.edu/blog/">Berkeley AI Research Blog</a>
         </div>
 
+
+
+
+        <!-- Other (this should really be 'misc' so don't get confused ...)-->
+        <div class="list-item other" data-category="other">
+          <p class="date">2023</p><a href="https://docs.google.com/document/d/1lmqOBtka-QA4OhOkzq_VlIjfi1Eb4Si6bBgSn8wUknk/edit">My Faculty Application Experience</a>
+        </div>
+
       </div>
       <div id="footer">Website code courtesy of <a href="https://andyzeng.github.io">Andy Zeng</a>.</div>
     </div>
@@ -333,6 +357,15 @@
 
       function toggle_contact() {
         var x = document.getElementById("more-contact");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function toggle_international() {
+        var x = document.getElementById("more-international");
         if (x.style.display === "none") {
           x.style.display = "block";
         } else {
