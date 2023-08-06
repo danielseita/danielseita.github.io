@@ -1,1 +1,364 @@
-Hello world
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!-- Google analytics tag (gtag.js) -->
+    <!--
+      Daniel: removing this for now.
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-STGLQW4BJX');
+    </script>
+    -->
+
+    <!-- Title -->
+    <title>Daniel Seita -- University of Southern California</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1000">
+
+    <!-- Isotope JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    </style>
+  </head>
+
+  <body id="body">
+
+    <div id="main">
+      <div id="intro">
+        <div id="intro-text">
+          <h1>Daniel Seita</h1>
+            <p>I'm an Assistant Professor of Computer Science at the University of Southern California. I'm interested in robotics, computer vision, and machine learning, with a focus on robotic manipulation of complex objects such as deformables. These days, I'm interested in understanding how multimodal observation and action representations can lead to more sample-efficient and reliable learning. Ultimately, I hope that this research can help open the doors for robotic manipulation in unstructured environments.
+            </p>
+            <br>
+            <p><i>I am actively recruiting students! Please check the <a href="https://slurm-lab.github.io/getting_involved/">Sensing, Learning, and Understanding for Robotic Manipulation website</a> to get involved</i>.</p>
+            <br>
+
+            <!-- Daniel: let's have this first, then toggle _underneath_. -->
+            <a href="javascript:toggle_bio()">Formal Bio</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:toggle_contact()">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/DanielTakeshi">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://scholar.google.com/citations?hl=en&user=ECHSnpYAAAAJ">G. Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="data/Daniel_Seita_CV.pdf">C. Vitae</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="more-bio" style="display: None">
+              <br>
+              <p>Daniel Seita is an Assistant Professor in the <a href="https://www.cs.usc.edu/">Computer Science department</a> at the <a href="https://www.usc.edu/">University of Southern California</a> and the director of the <a href="https://slurm-lab.github.io/">Sensing, Learning, and Understanding for Robotic Manipulation (SLURM) Lab</a>. His research interests are in computer vision and machine learning for robot manipulation, with a focus on developing novel methods to improve manipulation of challenging deformable objects. Daniel was previously a postdoc at <a href="https://www.ri.cmu.edu/">Carnegie Mellon University's Robotics Institute</a> and holds a PhD in computer science from the <a href="https://www.berkeley.edu/">University of California, Berkeley</a>. He received undergraduate degrees in math and computer science from <a href="https://www.williams.edu/">Williams College</a>. Daniel's research has been supported by a six-year Graduate Fellowship for STEM Diversity and by a two-year Berkeley Fellowship. He has the Honorable Mention for Best Paper award at UAI 2017, was an RSS 2022 Pioneer, and has presented work at premier robotics conferences such as ICRA, IROS, RSS, and CoRL.</p>
+              <br>
+            </div>
+            <div id="more-contact" style="display: None">
+              <br>
+              <p>seita@usc.edu</p>
+              <p>takeshidanny@gmail.com</p>
+              <br>
+              <p><i>If you are contacting me to inquire about research opportunities, please check <a href="https://slurm-lab.github.io/getting_involved/">my lab website for more information</a>. You do not need to email me to ask if I am taking on PhD students, and I am unable to evaluate or make decisions over email.</i></p>
+              <br>
+              <p>USC has an aggressive spam filter which may cause me to miss some non-USC emails, so it's OK if you want to also cc the Gmail there. (This is why some USC faculty list their Gmail as their contact information.)</p>
+              <br>
+              <p>There is no need to address me as "Dear Sir," "Esteemed Professor," "Respected Professor," or other excessivelly formal phrases that might be used in mass emails (and which I get in my inbox). You can just write "Prof. Seita," "Professor Seita," or just "Daniel." For in-person conversations, I believe my last name is pronounced like "say-ta" with two syllables.</p>
+              <br>
+            </div>
+          </p>
+        </div>
+        <div id="intro-image">
+          <img src="images/photos/Daniel_DTLA_Aug_2023.png">
+        </div>
+      </div>
+
+      <div id="filters" class="button-group">
+        <!-- <button class="button" data-filter="*">Show All</button> -->
+        <button class="button is-checked" data-filter=".highlight">Highlights</button>
+        <button class="button" data-filter=".publication">Research</button>
+        <button class="button" data-filter=".talk">Talks</button>
+        <button class="button" data-filter=".teaching">Teaching</button>
+        <button class="button" data-filter=".misc">Service</button>
+      </div>
+
+      <div class="grid">
+
+        <!-- Highlights -->
+        <div class="list-item highlight description" data-category="highlight">
+          Some recent research and career highlights.
+        </div>
+
+        <!-- Preview Videos -->
+        <div class="list-item highlight previews" data-category="highlight">
+
+          <a href="https://berkeleyautomation.github.io/bags/"><video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="videos/gctn.mov" type="video/mp4"></video></a>
+
+          <a href="https://sites.google.com/view/point-cloud-policy/home"><video class="preview2" playsinline="" muted="" autoplay="" loop=""><source src="videos/toolflownet.mp4" type="video/mp4"></video></a>
+
+          <a href="https://sites.google.com/view/autobag"><video class="preview3" playsinline="" muted="" autoplay="" loop=""><source src="videos/bags.mov" type="video/mp4"></video></a>
+
+        </div>
+
+        <!-- Truncated Set of Highlights (Shown by Default) -->
+        <div id="main-highlights">
+
+          <div class="list-item highlight" data-category="highlight">
+            Google AI blog post on <a href="https://ai.googleblog.com/2021/05/learning-to-manipulate-deformable.html">Learning to Manipulate Deformable Objects</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+          New York Times article on <a href="https://www.nytimes.com/2021/04/30/technology/robot-surgery-surgeon.html">surgical robotics</a>.
+          </div>
+
+        </div>
+
+        <!-- All Archived Highlights (Click to Show) -->
+        <div id="more-highlights" style="display: None">
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2023</p><b>Moved to USC to begin my faculty career!</b> I'm teaching <a href="https://sites.google.com/usc.edu/cs699-fa23-manipulation/home">CS 699 in the fall</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date"></p>Updated our ICRA 2021 paper (previously simulation-only) with physical experiments (<a href="https://berkeleyautomation.github.io/bags/">website</a>).
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2022</p>Presenting <a href="https://tinyurl.com/toolflownet">ToolFlowNet</a> at CoRL 2022. See you in New Zealand!
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date"></p>Invited to <a href="https://sites.google.com/view/rsspioneers2022/home?authuser=0">RSS Pioneers</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2021</p><b>Gave my PhD dissertation talk (<a href="https://youtu.be/IagXu4OedFE">video</a>), submitted <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2021/EECS-2021-185.html">the thesis</a>, and moved to CMU for my postdoc</b>!
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date"></p>Google AI blog post on <a href="https://ai.googleblog.com/2021/05/learning-to-manipulate-deformable.html">Learning to Manipulate Deformable Objects</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date"></p>New York Times article on <a href="https://www.nytimes.com/2021/04/30/technology/robot-surgery-surgeon.html">our surgical robotics work</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2020</p>BAIR Blog post on <a href="https://bair.berkeley.edu/blog/2020/05/05/fabrics/">methods for fabric manipulation</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2018</p>BAIR Blog post on <a href="https://bair.berkeley.edu/blog/2018/10/23/depth-sensing/">depth sensing in robtoics</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2017</p>Honorable Mention for Best Paper Award at UAI 2017.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date"></p>BAIR Blog post on <a href="http://bair.berkeley.edu/blog/2017/08/02/minibatch-metropolis-hastings/">Minibatch Metropolis Hastings</a>.
+          </div>
+
+          <div class="list-item highlight" data-category="highlight">
+            <p class="date">2015</p>Honored to be a recipient of the <a href="https://stemfellowships.org/">Graduate Fellowships for STEM Diversity</a>.
+          </div>
+
+        </div>
+
+        <!-- Toggle highlights button. -->
+        <div class="list-item highlight toggle-button" data-category="highlight">
+          <a id="toggle_highlights_button" href="javascript:toggle_highlights()">Show news log</a>
+        </div>
+
+
+
+
+        <!-- Publications -->
+        <div class="list-item publication" data-category="publication">
+          Please check the <a href="https://slurm-lab.github.io/publications/">publications on the lab website</a>.
+        </div>
+
+
+
+
+        <!-- Talks -->
+        <!-- <div class="list-item talk description" data-category="talk">
+          Some of my slides can be found <a href="https://slides.com/andyzeng">here</a>
+        </div> -->
+
+        <div class="list-item talk" data-category="talk">
+          Please see my CV for a full list of talks. This will only show a handful of self-selected talks.
+        </div>
+
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2022</p>Cornell University, Robotics Seminar (<a href="https://www.youtube.com/watch?v=whmlwKXcOnA">video</a>)
+        </div>
+
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2021</p>University of Toronto, AI in Robotics Seminar (<a href="https://www.youtube.com/watch?v=cGJ9zIGeYLs&t=1s">video</a>)
+        </div>
+
+
+
+
+        <!-- Teaching -->
+        <!--
+        <div class="list-item teaching" data-category="teaching">
+          (Since starting at USC)
+        </div>
+        -->
+
+        <div class="list-item teaching" data-category="teaching">
+          <p class="date">S2024</p>TBD
+        </div>
+
+        <div class="list-item teaching" data-category="teaching">
+          <p class="date">F2023</p><a href="https://sites.google.com/usc.edu/cs699-fa23-manipulation/home">CS 699: Deep Learning for Robotic Manipulation</a>
+        </div>
+
+
+
+
+        <!-- Services -->
+        <div class="list-item misc" data-category="misc">
+          <p class="date">2023</p>Inclusion Co-Chair, <a href="https://www.corl2023.org/">CoRL</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date"></p>Associate Editor, IROS
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date"></p>Co-Organizer, <a href="https://sites.google.com/view/rsspioneers2023/">RSS Pioneers</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date"></p>Co-Organizer, ICRA Workshop on <a href="https://deformable-workshop.github.io/icra2023/">deformable object manipulation</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date">2022</p>Inclusion Co-Chair, <a href="https://www.corl2022.org/">CoRL</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date"></p>Associate Editor, IROS
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date"></p>Co-Organizer, ICRA Workshop on <a href="https://deformable-workshop.github.io/icra2022/">deformable object manipulation</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date">2019+</p>Berkeley and CMU AI Mentorship Programs
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <p class="date">2017+</p>Primary maintainer, <a href="https://bair.berkeley.edu/blog/">Berkeley AI Research Blog</a>
+        </div>
+
+      </div>
+      <div id="footer">Website code courtesy of <a href="https://andyzeng.github.io">Andy Zeng</a>.</div>
+    </div>
+
+
+
+
+    <script>
+
+      // Isotope grid.
+      var $grid = $('.grid').isotope({
+        itemSelector: '.list-item',
+        layoutMode: 'fitRows',
+        transitionDuration: 0,
+        stagger: 10,
+        initLayout: false,
+        getSortData: {
+          name: '.name',
+          symbol: '.symbol',
+          number: '.number parseInt',
+          category: '[data-category]',
+          weight: function( itemElem ) {
+            var weight = $( itemElem ).find('.weight').text();
+            return parseFloat( weight.replace( /[\(\)]/g, '') );
+          }
+        }
+      });
+
+      // Bind filter button click.
+      $('#filters').on( 'click', 'button', function() {
+        var filterValue = $( this ).attr('data-filter');
+        localStorage.setItem('filterValue', filterValue);
+        $grid.isotope({ filter: filterValue });
+      });
+
+      // Change is-checked class on buttons.
+      $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });
+
+      function update_isotope() {
+        // Retrieve cached button click.
+        var defaultFilterValue = localStorage.getItem('filterValue');
+        if (defaultFilterValue == null) {
+          defaultFilterValue = ".highlight"
+        }
+        $grid.isotope({ filter: defaultFilterValue });
+        var buttons = document.getElementsByClassName("button");
+        for (var currButton of buttons) {
+          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
+            currButton.classList.add('is-checked');
+          } else {
+            currButton.classList.remove('is-checked');
+          }
+        }
+      }
+
+      function toggle_bio() {
+        var x = document.getElementById("more-bio");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function toggle_contact() {
+        var x = document.getElementById("more-contact");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function toggle_highlights() {
+        var x = document.getElementById("main-highlights");
+        var y = document.getElementById("more-highlights");
+        var b = document.getElementById("toggle_highlights_button")
+        if (y.style.display === "none") {
+          x.style.display = "none";
+          y.style.display = "block";
+          b.innerHTML = "Show less"
+          update_isotope();
+        } else {
+          x.style.display = "block";
+          y.style.display = "none";
+          b.innerHTML = "Show news log"
+          update_isotope();
+        }
+      }
+
+      update_isotope();
+
+    </script>
+  </body>
+</html>
