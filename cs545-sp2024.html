@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS545 Spring 2024 Course Page</title>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        body {
+            font-family: 'Asap', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        header, section {
+            margin-bottom: 20px;
+        }
+
+        /* Table styles */
+        .syllabus-table {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+        .syllabus-table th,
+        .syllabus-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center; /* Centers text horizontally */
+            vertical-align: middle; /* Centers text vertically */
+        }
+        .syllabus-table th {
+            background-color: #f2f2f2;
+        }
+        .syllabus-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .syllabus-table td a {
+            color: #0645AD;
+            text-decoration: none;
+        }
+        .syllabus-table td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Isotope JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CS545: Introduction to Robotics</h1>
+        <h2>Spring 2024</h2>
+    </header>
+
+    <section>
+        <b>Instructor</b>
+        <p>Daniel Seita (<a href="mailto:seita@usc.edu">seita@usc.edu</a>)</p>
+    </section>
+
+    <section>
+        <b>Teaching Assistants</b>
+        <p>TBD</p>
+    </section>
+
+    <section>
+        <b>Lectures</b>
+        <p>Mondays and Wednesdays: 4:00 pm to 5:50 pm, ZHS 352</p>
+    </section>
+
+    <section>
+        <b>Labs</b>
+        <p>Tuesdays: 4:00 pm to 5:50 pm, RTH 419</p>
+    </section>
+
+    <section>
+        <b>Office Hours</b>
+        <p>Mondays: 5:50 pm to 7:00 pm (right after class)</p>
+    </section>
+    
+    <section>
+        <b>Course Description</b>
+        <p>This class will introduce students to the fundamental questions in
+        robotics: what are good models of the world and how to integrate them
+        reliably into the planning of deployed robotic systems physically
+        interacting with the environment. All these problems arise from the
+        uncertainty due to sensor noise, modeling limitations, approximations in
+        algorithmic computations and inherent unpredictability of action
+        outcomes. The course will explore probabilistic techniques that allow
+        robots to act reliably and exhibit a variety of different behaviors in
+        spite of different sources of uncertainty. We will first cover
+        algorithms for state estimation in both known and unknown environments.
+        We will then explore functional aspects of robot’s interaction with the
+        world, such as the geometry of configuration spaces and manipulation
+        planning in these spaces. We will wrap up the course by exploring the
+        interplay of inference and planning and its applications in robot
+        autonomy, especially as it pertains to robot manipulation.</p>
+    </section>
+ 
+    <section>
+        <b>Learning Objectives</b>
+        <p>In this course, you will be introduced to probabilistic techniques
+        that allow state estimation, manipulation and planning in robotics. By
+        the end of this course you should be able to:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>demonstrate proficiency in the tools that support state estimation, manipulation and planning with sensor and modeling noise.</li>
+          <li>implement these techniques and test them with real-world datasets.</li>
+          <li>integrate your algorithms with state-of-the-art simulation environments.</li>
+          <li>explain the computational and practical challenges of applying these techniques in real-world interaction settings and compare them in terms of robustness, scalability and performance.</li>
+        </ul>
+    </section>
+ 
+    <section>
+        <b>Prerequisites</b>
+        <p>Students are required to have a solid background of probability
+        theory, linear algebra and calculus. Programming knowledge of Python is
+        also required.</p>
+    </section>
+ 
+    <section>
+        <b>Reading Material</b>
+        <p>TBD</p>
+    </section>
+ 
+    <section>
+        <b>Grading</b>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>Lab assignments: 25%</li>
+          <li>Homework assignments: 15%</li>
+          <li>Midterm exam: 30%</li>
+          <li>Final exam: 30%</li>
+        </ul>
+    </section>
+ 
+    <section>
+        <h2>Syllabus</h2>
+        <table class="syllabus-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Lecture</th>
+                    <th>Topic</th>
+                    <th>Assignment (Released)</th>
+                    <th>Readings</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mon Jan 08</td>
+                    <td>1</td>
+                    <td>Introduction</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="slides/introduction.pdf">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Jan 10</td>
+                    <td>2</td>
+                    <td>Matrix Algebra Review</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="slides/introduction.pdf">Slides</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
