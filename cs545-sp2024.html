@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS545 Spring 2024 Course Page</title>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        body {
+            font-family: 'Asap', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        header, section {
+            margin-bottom: 20px;
+        }
+
+        /* Table styles */
+        .syllabus-table {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+        .syllabus-table th,
+        .syllabus-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center; /* Centers text horizontally */
+            vertical-align: middle; /* Centers text vertically */
+        }
+        .syllabus-table th {
+            background-color: #f2f2f2;
+        }
+        .syllabus-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .syllabus-table td a {
+            color: #0645AD;
+            text-decoration: none;
+        }
+        .syllabus-table td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Isotope JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CS545: Introduction to Robotics</h1>
+        <h2>Spring 2024</h2>
+    </header>
+
+    <section>
+        <b>Instructor</b>
+        <p>Daniel Seita. Use Piazza to contact the course staff.</p>
+    </section>
+
+    <section>
+        <b>Teaching Assistants</b>
+        <p>Use Piazza to contact the course staff.</p>
+    </section>
+
+    <section>
+        <b>Lectures</b>
+        <p>Mondays and Wednesdays: 4:00 pm to 5:50 pm. Location: ZHS 352.</p>
+    </section>
+
+    <section>
+        <b>Labs</b>
+        <p>Tuesdays: 4:00 pm to 5:50 pm, RTH 419.</p>
+    </section>
+
+    <section>
+        <b>Office Hours</b>
+        <p>Mondays: 5:50 pm to 7:00 pm (right after class).</p>
+    </section>
+
+    <section>
+        <b>Course Description</b>
+        <p>This class will introduce students to the fundamental questions in
+        robotics: what are good models of the world and how to integrate them
+        reliably into the planning of deployed robotic systems physically
+        interacting with the environment. All these problems arise from the
+        uncertainty due to sensor noise, modeling limitations, approximations in
+        algorithmic computations and inherent unpredictability of action
+        outcomes. The course will explore probabilistic techniques that allow
+        robots to act reliably and exhibit a variety of different behaviors in
+        spite of different sources of uncertainty. We will first cover
+        algorithms for state estimation in both known and unknown environments.
+        We will then explore functional aspects of robot’s interaction with the
+        world, such as the geometry of configuration spaces and manipulation
+        planning in these spaces. We will wrap up the course by exploring the
+        interplay of inference and planning and its applications in robot
+        autonomy, especially as it pertains to robot manipulation.</p>
+    </section>
+
+    <section>
+        <b>Learning Objectives</b>
+        <p>In this course, you will be introduced to probabilistic techniques
+        that allow state estimation, manipulation and planning in robotics. By
+        the end of this course you should be able to:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>demonstrate proficiency in the tools that support state estimation, manipulation and planning with sensor and modeling noise.</li>
+          <li>implement these techniques and test them with real-world datasets.</li>
+          <li>integrate your algorithms with state-of-the-art simulation environments.</li>
+          <li>explain the computational and practical challenges of applying these techniques in real-world interaction settings and compare them in terms of robustness, scalability and performance.</li>
+        </ul>
+    </section>
+
+    <section>
+        <b>Prerequisites</b>
+        <p>Students are required to have a solid background of probability
+        theory, linear algebra and calculus. Students should also be proficient
+        in Python.</p>
+    </section>
+
+    <section>
+        <b>Reading Material</b>
+        <p>Much of the lecture material will be taken from:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li>Modern Robotics, by Lynch and Park. You can <a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics">find the textbook for free here</a> and use the December 2019 version (MR).</li>
+        <li>Bruno Siciliano, Lorenzo Sciavicco, Luigi Villani, and Giuseppe Oriolo. Robotics: Modelling, Planning and Control (SS). </li>
+        </ul>
+    </section>
+
+    <section>
+        <b>Grading</b>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>Homework assignments: 10%</li>
+          <li>Lab assignments: 30%</li>
+          <li>Midterm exam: 30%</li>
+          <li>Final exam: 30%</li>
+        </ul>
+        <p>We will share grades via Gradescope.</p>
+    </section>
+
+    <section>
+        <b>Acknowledgments</b>
+        <p>This course is based on the class developed by Stefanos Nikolaidis at USC. The most recent offering was in <a href="https://www.stefanosnikolaidis.net/robotics2023.html">Fall 2023</a>. This can give you a preview for what we will cover.</p>
+    </section>
+
+    <section>
+        <h2>Syllabus (subject to change)</h2>
+        <table class="syllabus-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Lecture</th>
+                    <th>Topic</th>
+                    <th>Assignment (Released)</th>
+                    <th>Readings</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mon Jan 08</td>
+                    <td>01</td>
+                    <td>Introduction</td>
+                    <td>HW 1 (Math Basics); Due Jan 19</td>
+                    <td></td>
+                    <td><a href="cs545-sp2024-slides/introduction.pdf">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Jan 10</td>
+                    <td>02</td>
+                    <td>Matrix Algebra Review</td>
+                    <td></td>
+                    <td>SS Appendix A, <a href="https://cs229.stanford.edu/section/cs229-linalg.pdf">LinAlg Review</a></td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Jan 15</td>
+                    <td></td>
+                    <td><i>No Class (MLK Jr Day)</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Wed Jan 17</td>
+                    <td>03</td>
+                    <td>Probability Theory</td>
+                    <td>Lab 1 (Introduction to ROS)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Jan 22</td>
+                    <td>04</td>
+                    <td>Bayesian Networks</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Jan 24</td>
+                    <td>05</td>
+                    <td>Bayesian Filters</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Jan 29</td>
+                    <td>06</td>
+                    <td>Kalman Filters</td>
+                    <td>HW 2 (Kalman Filters)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Jan 31</td>
+                    <td>07</td>
+                    <td>Particle Filters</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Feb 05</td>
+                    <td>08</td>
+                    <td>Mathematical Optimization</td>
+                    <td>Lab 2 (Monte Carlo Localization)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Feb 07</td>
+                    <td>09</td>
+                    <td>Configuration Spaces</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Feb 12</td>
+                    <td>10</td>
+                    <td>Kinematic Transformations</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Feb 14</td>
+                    <td>11</td>
+                    <td>Forward and Inverse Kinematics</td>
+                    <td>HW 3 (Inverse Kinematics)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Feb 19</td>
+                    <td></td>
+                    <td><i>No Class (President's Day)</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Wed Feb 21</td>
+                    <td>12</td>
+                    <td>Motion Planning (Optimization)</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Feb 26</td>
+                    <td>13</td>
+                    <td>Motion Planning (Sampling I)</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Feb 28</td>
+                    <td>14</td>
+                    <td>Motion Planning (Sampling II)</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Mar 04</td>
+                    <td>15</td>
+                    <td><b>Midterm Exam</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Wed Mar 06</td>
+                    <td>16</td>
+                    <td>POMDPs</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Mar 11</td>
+                    <td></td>
+                    <td><i>Spring Break</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Wed Mar 13</td>
+                    <td></td>
+                    <td><i>Spring Break</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mon Mar 18</td>
+                    <td>17</td>
+                    <td>Dynamics</td>
+                    <td>Lab 3 (RRT for a Manipulator)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Mar 20</td>
+                    <td>18</td>
+                    <td>Nonlinear Control</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Mar 25</td>
+                    <td>19</td>
+                    <td>Acting Under Uncertainty</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Mar 27</td>
+                    <td>20</td>
+                    <td>Perception for Robotics I</td>
+                    <td>Lab 4 (TBD)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Apr 01</td>
+                    <td>21</td>
+                    <td>Perception for Robotics II</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Apr 03</td>
+                    <td>22</td>
+                    <td>Imitation Learning</td>
+                    <td>HW 4 (IL and RL)</td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Apr 08</td>
+                    <td>23</td>
+                    <td>Reinforcement Learning I</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Apr 10</td>
+                    <td>24</td>
+                    <td>Reinforcement Learning II</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Apr 15</td>
+                    <td>25</td>
+                    <td>Simulation and Sim-to-Real</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Apr 17</td>
+                    <td>26</td>
+                    <td>Language and Robotics</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Mon Apr 22</td>
+                    <td>27</td>
+                    <td>Advanced / Special Topics</td>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><a href="">Slides</a></td>
+                </tr>
+                <tr>
+                    <td>Wed Apr 24</td>
+                    <td>28</td>
+                    <td>Final Exam Review, Course Wrap-up</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TBD (May 01-08)</td>
+                    <td></td>
+                    <td><b>Final Exam</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
