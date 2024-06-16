@@ -26,7 +26,7 @@
 
         /* Table styles */
         .syllabus-table {
-            max-width: 1000px;
+            max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
             border-collapse: collapse;
@@ -60,13 +60,13 @@
 </head>
 <body>
     <header>
-        <h1>CS699: Deep Learning for Robotic Manipulation</h1>
+        <h1>CS699: Robotic Manipulation</h1>
         <h2>Fall 2024</h2>
     </header>
 
     <section>
         <b>Instructor</b>
-        <p>Daniel Seita (<a href="mailto:seita@usc.edu">seita@usc.edu</a>)</p>
+        <p>Daniel Seita</p>
     </section>
 
     <section>
@@ -76,8 +76,246 @@
 
     <section>
         <b>Lectures</b>
-        <p>TBD</p>
+        <p>Thursdays: 3:30 pm to 6:50 pm. Location: DMC 205.</p>
+        <p>We may record the instructor's lectures and share them on this website (see the "Recording" column below).</p>
+        <p>Due to the length of the class, we will typically have a break halfway through the lecture.</p>
     </section>
+
+    <section>
+        <b>Office Hours</b>
+        <p>Daniel: Thursdays, 1:45pm to 3:00pm, (TODO).</p>
+        <p>TBD: Thursdays, 3:00 pm to 4:00 pm, RTH 419.</p>
+        <p><i>Exceptions</i>: due to holidays and/or travel ... TODO.</p>
+    </section>
+
+    <section>
+        <b>Course Description</b>
+        <p>This class will ....</p>
+    </section>
+
+    <section>
+        <b>Learning Objectives</b>
+        <p>In this course, you will ... By the end of this course you should be
+        able to:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>demonstrate proficiency in the tools that support state estimation, manipulation and planning with sensor and modeling noise.</li>
+          <li>implement these techniques and test them with real-world datasets.</li>
+          <li>integrate your algorithms with state-of-the-art simulation environments.</li>
+          <li>explain the computational and practical challenges of applying these techniques in real-world interaction settings and compare them in terms of robustness, scalability and performance.</li>
+        </ul>
+    </section>
+
+    <section>
+        <b>Prerequisites</b>
+        <p>Students should have a solid background in probability, linear algebra, and calculus.
+        Students should also be comfortable programming in Python.</p>
+    </section>
+
+    <section>
+        <b>Reading Material</b>
+        <p>Much of the lecture material is based on readings from:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><i>Probabilistic Robotics</i>, by Sebastian Thrun, Wolfram Burgard, and Dieter Fox. (TBF)</li>
+        <li><i>Modern Robotics</i>, by Lynch and Park. You can <a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics">find the textbook here</a> (use the 2019 version) with lecture videos. (LP)</li>
+        <li><i>Robotic Manipulation: Perception Planning and Control</i>, by Russ Tedrake. You can <a href="https://manipulation.csail.mit.edu/index.html">find the textbook here</a>. (RT)</li>
+        <li><i>Robotics: Modelling, Planning, and Control</i>, by Bruno Siciliano, Lorenzo Sciavicco, Luigi Villani, and Giuseppe Oriolo. (SS)</li>
+        <li><i>Principles of Robot Motion</i>, by Howie Choset, Kevin M. Lynch, Seth Hutchinson, George Kantor, Wolfram Burgard, Lydia E. Kavraki, and Sebastian Thrun. (CL)</li>
+        <li><i>Planning Algorithms</i>, by Steven LaValle. You can <a href="https://lavalle.pl/planning/">find the textbook here</a>. (LA)</li>
+        </ul>
+    </section>
+
+    <section>
+        <b>Relevant Courses</b>
+        <p>Additionally, we will also have materials from these relevant courses:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><i>Introduction to Artificial Intelligence</i> from Berkeley. You can find <a href="https://inst.eecs.berkeley.edu/~cs188/fa23/">a recent course here</a> with slides and videos. (CS188)</li>
+        <li><i>Advanced Robotics</i> from Berkeley (Pieter Abbeel). You can find <a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa19/">the Fall 2019 course here</a> with slides and videos. (CS287)</li>
+        <li><i>Introduction to Robotics</i> from USC (Stefan Schaal). You can find <a href="https://www-clmc.net/pmwiki.php/Teaching/IntroductionToRobotics">the Fall 2019 course here</a> with slides and <a href="https://www.youtube.com/playlist?list=PL2zHfS7EZrEZvDanoVUuhrh45kfR3AOPt">videos</a>. (CS545)</li>
+        <li><i>Introduction to Robotics</i> from USC (Stefanos Nikolaidis). The <a href="https://www.stefanosnikolaidis.net/robotics2023.html">most recent offering was in Fall 2023</a>.</p>
+        </ul>
+        This is the second iteration of the class, following the first iteration in Fall 2023.
+    </section>
+
+    <section>
+        <b>Grading</b>
+        <p>The overall course grade is based on:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>Homework assignments: 10%</li>
+          <li>Lab assignments: 30%</li>
+          <li>Midterm exam: 30%</li>
+          <li>Final exam: 30%</li>
+        </ul>
+        <p>
+        We will share grades via Gradescope. We reserve the right to make tweaks to the grading as needed.
+        When submitting assignments on Gradescope please follow the instructions carefully to make sure that the formatting is correct (e.g., if we ask for one page per answer, please do that).
+        To encourage in-class attendance and productive discussions on Piazza, we may offer a small amount of extra credit points to students with excellent course participation or who have written exceptionally helpful or useful Piazza posts.
+        In practice, this may help students who are just below the cutoff for a particular grade.
+        </p>
+    </section>
+
+    <section>
+        <b>Acknowledgments</b>
+        <p>This course is mostly based on materials taught in courses by David Held and Deepak Pathak from CMU.</p>
+    </section>
+
+    <section>
+        <h2>Syllabus</h2>
+        A few notes about the syllabus:
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li>Unless stated otherwise, all deadlines below are at 11:59PM (in Pacific Time) of the given day.</li>
+        <li>See Piazza for links to the homework assignments and labs.</li>
+        </ul><br>
+        <table class="syllabus-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Class</th>
+                    <th>Topics</th>
+                    <th>Assignment (Released)</th>
+                    <th>Readings / References</th>
+                    <th>Slides</th>
+                    <th>Recording</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Thurs<br>Aug 29</td>
+                    <td>01</td>
+                    <td>Introduction</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 05</td>
+                    <td>02</td>
+                    <td>TBD<td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 12</td>
+                    <td>03</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 19</td>
+                    <td>04</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 26</td>
+                    <td>05</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 03</td>
+                    <td>06</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 10</td>
+                    <td></td>
+                    <td>No Class (Fall Recess)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 17</td>
+                    <td>07</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 24</td>
+                    <td>08</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 31</td>
+                    <td>09</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 07</td>
+                    <td>10</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 14</td>
+                    <td>11</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 21</td>
+                    <td>12</td>
+                    <td>TBD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 28</td>
+                    <td></td>
+                    <td>No Class (Thanksgiving)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Dec 05</td>
+                    <td>13</td>
+                    <td>Final Project Presentations</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
 
 </body>
 </html>
