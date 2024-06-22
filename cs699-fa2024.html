@@ -63,6 +63,7 @@
         <h1>CS699: Robotic Manipulation</h1>
         <h2>Fall 2024</h2>
         <h3>Longer title: <b>Deep Learning for Robotic Manipulation</b></h3>
+        <p>You can find the <a href="https://sites.google.com/usc.edu/cs699-fa23-manipulation/home">CSCI 699 website from Fall 2023 here</a>.</p>
     </header>
 
     <section>
@@ -78,63 +79,121 @@
     <section>
         <b>Lectures</b>
         <p>Thursdays: 3:30 pm to 6:50 pm. Location: DMC 205.</p>
-        <p>We may record the instructor's lectures and share them on this website (see the "Recording" column below).</p>
-        <p>Due to the length of the class, we will typically have a break halfway through the lecture.</p>
+        <p>Due to the length of the class, we will have a break halfway through the lecture.</p>
     </section>
 
     <section>
         <b>Office Hours</b>
-        <p>Daniel: Thursdays, 1:45pm to 3:00pm, (TODO).</p>
+        <p>Daniel: Thursdays, 1:45pm to 3:00pm.</p>
+        <!--
         <p>TBD: Thursdays, 3:00 pm to 4:00 pm, RTH 419.</p>
         <p><i>Exceptions</i>: due to holidays and/or travel ... TODO.</p>
+        -->
     </section>
 
     <section>
         <b>Course Description</b>
-        <p>This class will ....</p>
+        <p>
+        This special topics class and seminar will cover state of the art
+        advances in robot manipulation. This is about robots interacting with
+        and affecting their environment, and could refer to things such as
+        grasping, pushing, picking-and-placing, tossing, and many other actions.
+        Aided in part by the rise of deep learning and subsequent advances in
+        robot perception, the research area of robot manipulation has
+        experienced tremendous growth in recent years. Nonetheless, despite this
+        progress, real-world manipulation remains fundamentally hard. In this
+        course, we will review and understand robot manipulation with a focus on
+        using learning-based techniques. We will explore how to get such systems
+        to work more reliably in unstructured real world settings.
+        </p><br>
+        <p>
+        For Fall 2024, we will continue the "multimodality" theme from last
+        fall, where we study robots that can handle multiple types of inputs or
+        perform multiple types of actions. For example, this would include robot
+        manipulation based on language and images as input. For 2024, we will
+        also focus on higher-DOF control, including bimanual robots, quadrupeds
+        with arms, and humanoid manipulation. We will also emphasize learning
+        from human feedback.
+        </p><br>
+        <p>
+        In this class, students will read, review, and present research papers.
+        Most research papers will be recent and have cutting-edge results.
+        Students will also work on a substantial final project.  This class is
+        aimed at PhD students who are doing research in this topic. However,
+        undergraduates and master's students can enroll with permission of the
+        instructor. If interested, please talk to the instructor at the
+        beginning of the semester.
+        </p>
     </section>
 
     <section>
         <b>Learning Objectives</b>
-        <p>In this course, you will ... By the end of this course you should be
-        able to:</p>
         <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>demonstrate proficiency in the tools that support state estimation, manipulation and planning with sensor and modeling noise.</li>
-          <li>implement these techniques and test them with real-world datasets.</li>
-          <li>integrate your algorithms with state-of-the-art simulation environments.</li>
-          <li>explain the computational and practical challenges of applying these techniques in real-world interaction settings and compare them in terms of robustness, scalability and performance.</li>
+          <li>A better understanding of robot learning, and specifically robot learning for manipulation.</li>
+          <li>Gain experience reading, understanding, analyzing, and debating papers from robotics venues.</li>
+          <ul style="list-style-type: circle; margin-left: 20px;">
+            <li>Main conferences: CoRL, RSS, ICRA, IROS, ISRR, ISER, WAFR.</li>
+            <li>Main journals: RA-L, T-RO, IJRR, AURO, Science Robotics.</li>
+          </ul>
+          <li>Understand, implement, and experiment with state-of-the-art algorithms for the final project.</li>
+          <li>Improve academic writing and presentation skills.</li>
         </ul>
+    </section>
+
+    <section>
+        <b>Academic Integrity</b>
+        <p>Discussing with other students at a high level is allowed, but you must write up your own paper reviews and write, prepare, and deliver your own class presentation. For final projects, you must also acknowledge whether this is ongoing and concurrent research (and to what extent you will be implementing or working on class-related material), and whether you are re-using materials for another class.</p>
+
+        <p>You are welcome to use whatever resources you need to best learn the material. In general, we agree with <a href="https://courses.engr.illinois.edu/cs473/fa2022/integrity.html">Jeff Erickson's citation policy</a>. For example:</p>
+
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>If you talked with a robotic manipulation researcher to help understand a technical concept, you must acknowledge that person.</ul>
+          <li>If you used someone else's blog post as a background reference, you must cite it.</ul>
+          <li>Using Generative AI is encouraged, but you must tell us how you use it.</li>
+        </ul>
+        <p>We will provide templates for assignments where you must acknowledge the ingredients you used for your assignment and/or project.</p>
     </section>
 
     <section>
         <b>Prerequisites</b>
-        <p>Students should have a solid background in probability, linear algebra, and calculus.
-        Students should also be comfortable programming in Python.</p>
+        <p>Courses such as CSCI 467: Introduction to Machine Learning, and CSCI 545: Introduction to Robotics, are recommended but not required. Students are expected to be familiar with the fundamentals of robotics (especially manipulation) and machine learning, or be willing to learn the material as needed. This class will consist largely of reading and discussing papers, which requires some degree of technical maturity.</p>
     </section>
 
     <section>
-        <b>Reading Material</b>
-        <p>Much of the lecture material is based on readings from:</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><i>Probabilistic Robotics</i>, by Sebastian Thrun, Wolfram Burgard, and Dieter Fox. (TBF)</li>
-        <li><i>Modern Robotics</i>, by Lynch and Park. You can <a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics">find the textbook here</a> (use the 2019 version) with lecture videos. (LP)</li>
-        <li><i>Robotic Manipulation: Perception Planning and Control</i>, by Russ Tedrake. You can <a href="https://manipulation.csail.mit.edu/index.html">find the textbook here</a>. (RT)</li>
-        <li><i>Robotics: Modelling, Planning, and Control</i>, by Bruno Siciliano, Lorenzo Sciavicco, Luigi Villani, and Giuseppe Oriolo. (SS)</li>
-        <li><i>Principles of Robot Motion</i>, by Howie Choset, Kevin M. Lynch, Seth Hutchinson, George Kantor, Wolfram Burgard, Lydia E. Kavraki, and Sebastian Thrun. (CL)</li>
-        <li><i>Planning Algorithms</i>, by Steven LaValle. You can <a href="https://lavalle.pl/planning/">find the textbook here</a>. (LA)</li>
-        </ul>
-    </section>
+        <b>Related Materials and References</b>
+        <section>
+            <p>Some relevant USC courses:</p>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li>CSCI 445L: Introduction to Robotics (offered in Fall 2024 by Heather Culbertson)</li>
+                <li>CSCI 467: Introduction to Machine Learning (offered in Fall 2024 by Jieyu Zhao)</li>
+                <li>CSCI 545: Introduction to Robotics (offered in Fall 2024 by Stefanos Nikolaidis, covers more robot planning / IK / dynamics)</li>
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li>I also taught CSCI 545 in Spring 2024. You can find <a href="https://danielseita.github.io/cs545-sp2024.html">the website here</a> with lecture videos.</li>
+                </ul>
+                <li>CSCI 566: Deep Learning and its Applications (offered in Fall 2024 by Yan Liu)</li>
+                <li>CSCI 567: Machine Learning (offered in Fall 2024 by Dani Yogotama)</li>
+                <li>CSCI 699: Robot Learning (offered in Fall 2024 by Erdem Bıyık)</li>
+                <li>CSCI 699: Robotic Perception (offered in Fall 2024 by Yue Wang)</li>
+            </ul>
 
-    <section>
-        <b>Relevant Courses</b>
-        <p>Additionally, we will also have materials from these relevant courses:</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-        <li><i>Introduction to Artificial Intelligence</i> from Berkeley. You can find <a href="https://inst.eecs.berkeley.edu/~cs188/fa23/">a recent course here</a> with slides and videos. (CS188)</li>
-        <li><i>Advanced Robotics</i> from Berkeley (Pieter Abbeel). You can find <a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa19/">the Fall 2019 course here</a> with slides and videos. (CS287)</li>
-        <li><i>Introduction to Robotics</i> from USC (Stefan Schaal). You can find <a href="https://www-clmc.net/pmwiki.php/Teaching/IntroductionToRobotics">the Fall 2019 course here</a> with slides and <a href="https://www.youtube.com/playlist?list=PL2zHfS7EZrEZvDanoVUuhrh45kfR3AOPt">videos</a>. (CS545)</li>
-        <li><i>Introduction to Robotics</i> from USC (Stefanos Nikolaidis). The <a href="https://www.stefanosnikolaidis.net/robotics2023.html">most recent offering was in Fall 2023</a>.</p>
-        </ul>
-        This is the second iteration of the class, following the first iteration in Fall 2023.
+            <br><p>This course is adapted from two CMU courses:</p>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li><a href="https://sites.google.com/view/16-881-cmu/home">David Held's course</a></li>
+                <li><a href="https://16-884.github.io/">Deepak Pathak's course</a></li>
+            </ul>
+
+            <br><p>Other useful courses you might consider consulting for additional material on robot learning and manipulation include:</p>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li><a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa19/">Pieter Abbeel's course</a></li>
+                <li><a href="https://rail.eecs.berkeley.edu/deeprlcourse/">Sergey Levine's course</a></li>
+                <li><a href="https://manipulation.csail.mit.edu/">Russ Tedrake's course / textbook</a></li>
+                <li><a href="http://motion.cs.illinois.edu/RoboticSystems/Book.html">Kris Hauser's course / textbook</a></li>
+                <li><a href="http://cs231n.stanford.edu/">Fei-Fei Li's course, recently co-taught with Yunzhu Li and Ruohan Gao</a></li>
+                <li><a href="https://cs224r.stanford.edu/">Chelsea Finn's course</a></li>
+                <li><a href="https://www.cs.utexas.edu/~yukez/cs391r_fall2021/index.html">Yuke Zhu's course / seminar</a></li>
+                <li><a href="http://incompleteideas.net/book/the-book.html">Reinforcement Learning textbook by Richard Sutton and Andrew Barto</a></li>
+            </ul>
+        </section>
     </section>
 
     <section>
@@ -161,6 +220,8 @@
 
     <section>
         <h2>Syllabus</h2>
+        <b>Please find a link to the weekly schedule here in this Google Spreadsheet.</b>
+        <!--
         A few notes about the syllabus:
         <ul style="list-style-type: disc; margin-left: 20px;">
         <li>Unless stated otherwise, all deadlines below are at 11:59PM (in Pacific Time) of the given day.</li>
@@ -315,6 +376,7 @@
                 </tr>
             </tbody>
         </table>
+        -->
     </section>
 
 
