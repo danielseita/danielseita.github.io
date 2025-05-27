@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS545 Fall 2025 Course Page</title>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        body {
+            font-family: 'Asap', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        header, section {
+            margin-bottom: 20px;
+        }
+
+        /* Table styles */
+        .syllabus-table {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+        .syllabus-table th,
+        .syllabus-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center; /* Centers text horizontally */
+            vertical-align: middle; /* Centers text vertically */
+        }
+        .syllabus-table th {
+            background-color: #f2f2f2;
+        }
+        .syllabus-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .syllabus-table td a {
+            color: #0645AD;
+            text-decoration: none;
+        }
+        .syllabus-table td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Isotope JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CS545: Introduction to Robotics</h1>
+        <h2>Fall 2025</h2>
+    </header>
+
+    <section>
+        <b>Course Staff</b>
+        <p>Daniel Seita</p>
+        <p>Teaching Assistant: TBD</p>
+        <p>Use Piazza to contact the course staff: TBD</p>
+        <p><i>When posting any code debugging questions on Piazza, please declare (in the post) that you have <a href="https://gist.github.com/DanielTakeshi/3c7ad819bcf472e7cb66714a37065355">read our class policies here</a></i>.</p>
+    </section>
+
+    <section>
+        <b>Lectures</b>
+        <p>Thursdays: 4:00 pm to 7:20 pm. Location: SLH 102.</p>
+        <p>We will record lectures and share them on this website (see the "Recording" column below). <i>If you want to peek ahead, the course will be similar to <a href="https://danielseita.github.io/cs545-sp2024.html">the one taught in Spring 2024</a></i>.</p>
+    </section>
+
+    <!--
+    <section>
+        <b>Labs</b>
+        <p>Tuesdays: 4:00 pm to 5:50 pm, RTH 419.</p>
+        <p>We will not start these labs until later in the semester. These will only be for when we have Lab 3 and Lab 4 assignments. See more details on Piazza.</p>
+    </section>
+    -->
+
+    <section>
+        <b>Office Hours</b>
+        <p>Daniel: 2:00pm to 3:15pm, GCS 305A. Let him know if you plan to attend and do not have card access.</p>
+        <p>TAs: TBD.</p>
+        <p><i>Exceptions</i>: if there are holidays and/or conflicts, Daniel will note them here.</p>
+    </section>
+
+    <section>
+        <b>Course Description</b>
+        <p>This class will introduce students to the fundamental questions in
+        robotics: what are good models of the world and how to integrate them
+        reliably into the planning of deployed robotic systems physically
+        interacting with the environment. All these problems arise from the
+        uncertainty due to sensor noise, modeling limitations, approximations in
+        algorithmic computations and inherent unpredictability of action
+        outcomes. The course will explore probabilistic techniques that allow
+        robots to act reliably and exhibit a variety of different behaviors in
+        spite of different sources of uncertainty. We will first cover
+        algorithms for state estimation in both known and unknown environments.
+        We will then explore functional aspects of robot’s interaction with the
+        world, such as the geometry of configuration spaces and manipulation
+        planning in these spaces. We will wrap up the course by exploring the
+        interplay of inference and planning and its applications in robot
+        autonomy, especially for manipulation and mobility.</p>
+    </section>
+
+    <section>
+        <b>Learning Objectives</b>
+        <p>In this course, you will be introduced to probabilistic techniques
+        that allow state estimation, manipulation and planning in robotics. By
+        the end of this course you should be able to:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>demonstrate proficiency in the tools that support state estimation, manipulation and planning with sensor and modeling noise.</li>
+          <li>implement these techniques and test them with real-world datasets.</li>
+          <li>integrate your algorithms with state-of-the-art simulation environments.</li>
+          <li>explain the computational and practical challenges of applying these techniques in real-world interaction settings and compare them in terms of robustness, scalability and performance.</li>
+        </ul>
+    </section>
+
+    <section>
+        <b>Prerequisites</b>
+        <p>Students should have a solid background in probability, linear algebra, and calculus.
+        Students should also be comfortable programming in Python.</p>
+    </section>
+
+    <section>
+        <b>Reading Material</b>
+        <p>Much of the lecture material is based on readings from:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><i>Probabilistic Robotics</i>, by Sebastian Thrun, Wolfram Burgard, and Dieter Fox. (TBF)</li>
+        <li><i>Modern Robotics</i>, by Lynch and Park. You can <a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics">find the textbook here</a> (use the 2019 version) with lecture videos. (LP)</li>
+        <li><i>Robotic Manipulation: Perception Planning and Control</i>, by Russ Tedrake. You can <a href="https://manipulation.csail.mit.edu/index.html">find the textbook here</a>. (RT)</li>
+        <li><i>Robotics: Modelling, Planning, and Control</i>, by Bruno Siciliano, Lorenzo Sciavicco, Luigi Villani, and Giuseppe Oriolo. (SS)</li>
+        <li><i>Principles of Robot Motion</i>, by Howie Choset, Kevin M. Lynch, Seth Hutchinson, George Kantor, Wolfram Burgard, Lydia E. Kavraki, and Sebastian Thrun. (CL)</li>
+        <li><i>Planning Algorithms</i>, by Steven LaValle. You can <a href="https://lavalle.pl/planning/">find the textbook here</a>. (LA)</li>
+        </ul>
+    </section>
+
+    <section>
+        <b>Relevant Courses</b>
+        <p>Additionally, we will also have materials from these relevant courses:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li><i>Introduction to Artificial Intelligence</i> from Berkeley. You can find <a href="https://inst.eecs.berkeley.edu/~cs188/fa23/">a recent course here</a> with slides and videos. (CS 188)</li>
+        <li><i>Advanced Robotics</i> from Berkeley (Pieter Abbeel). You can find <a href="https://people.eecs.berkeley.edu/~pabbeel/cs287-fa19/">the Fall 2019 course here</a> with slides and videos. (CS 287)</li>
+        <li><i>Introduction to Robotics</i> from USC (Stefan Schaal). You can find <a href="https://www-clmc.net/pmwiki.php/Teaching/IntroductionToRobotics">the Fall 2019 course here</a> with slides and <a href="https://www.youtube.com/playlist?list=PL2zHfS7EZrEZvDanoVUuhrh45kfR3AOPt">videos</a> (also CSCI 545).</li>
+        <li><i>Introduction to Robotics</i> from USC (Stefanos Nikolaidis). It was offered in <a href="https://www.stefanosnikolaidis.net/robotics.html">Fall 2019</a>, <a href="https://www.stefanosnikolaidis.net/robotics2020.html">Fall 2020</a>, <a href="https://www.stefanosnikolaidis.net/robotics2021.html">Fall 2021</a>, <a href="https://www.stefanosnikolaidis.net/robotics2023.html">Fall 2023</a> and <a href="https://www.stefanosnikolaidis.net/robotics2024.html">Fall 2024</a> (also CSCI 545).</p>
+        </ul>
+    </section>
+
+    <section>
+        <b>Grading</b>
+        <p>The overall course grade is based on:</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>Homework assignments: 10%</li>
+          <li>Lab assignments: 30%</li>
+          <li>Midterm exam: 30%</li>
+          <li>Final exam: 30%</li>
+        </ul>
+        <p>
+        We will share grades via Gradescope. We reserve the right to make tweaks to the grading as needed.
+        When submitting assignments on Gradescope please follow the instructions carefully to make sure that the formatting is correct (e.g., if we ask for one page per answer, please do that).
+        To encourage in-class attendance and productive discussions on Piazza, we may offer a small amount of extra credit points to students with excellent course participation or who have written exceptionally helpful or useful Piazza posts.
+        In practice, this may help students who are just below the cutoff for a particular grade.
+        We do not offer alternative times to take the midterm or final exam.
+        </p>
+    </section>
+
+    <section>
+        <b>Acknowledgments</b>
+        <p>This course is mostly based on materials from Stefanos Nikolaidis' class at USC. We will cite other acknowledgements throughout the slides.</p>
+    </section>
+
+    <section>
+        <h2>Syllabus (Subject to Change)</h2>
+        A few notes about the syllabus:
+        <ul style="list-style-type: disc; margin-left: 20px;">
+        <li>The course is largely based on the <a href="https://danielseita.github.io/cs545-sp2024.html">Spring 2024 version</a>. <a href="https://www.youtube.com/playlist?list=PLSSfn3n6oEKRPCxJFWRPWAK0pvAjHdtU5">Here is the YouTube Playlist</a> of the lectures. That had two classes per week, while here we have one. To make the schedule more consistent with the Spring 2024, we split each normal class into two (we will have a break halfway).</li>
+        <li>See Piazza for links to the homework assignments and labs. Unless stated otherwise, all deadlines below are at 11:59PM (in Pacific Time) of the given day.</li>
+        </ul><br>
+        <table class="syllabus-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Class</th>
+                    <th>Topic</th>
+                    <th>Assignment (Released)</th>
+                    <th>Readings / References</th>
+                    <th>Slides</th>
+                    <th>Recording</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Thurs<br>Aug 28</td>
+                    <td>01</td>
+                    <td>Introduction</td>
+                    <td>HW 1 (Math Fundamentals);<br>Due Jan 21</td>
+                    <td></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Aug 28</td>
+                    <td>01</td>
+                    <td>Linear Algebra Review</td>
+                    <td></td>
+                    <td>SS Appendix A;<br><a href="https://cs229.stanford.edu/section/cs229-linalg.pdf">Linear Algebra Review</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 04</td>
+                    <td>02</td>
+                    <td>Probability Review</td>
+                    <td>Lab 1 (Introduction to ROS);<br>Due Feb 04</td>
+                    <td>TBF 2.1-2.2; <a href="https://www.youtube.com/watch?v=xamzdNUN1o0">CS287 #11</a>;
+                        <br><a href="https://cs229.stanford.edu/section/gaussians.pdf">Gaussians Review</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 04</td>
+                    <td>02</td>
+                    <td>Python/ROS Tutorial;<br>Bayes Nets I</td>
+                    <td></td>
+                    <td><a href="https://www.youtube.com/watch?v=T4l6ltMMcec">CS188 BN Part 1</a></td>
+                    <td><a href="https://www.dropbox.com/scl/fi/dv61lwm9p76jdclxy0yho/Seita_Lec_04_Sp2024.pdf?rlkey=m4ag7viir40roehwo9kqr6yj5&dl=0">Slides</a>;
+                        <br><a href="">Python/ROS</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 11</td>
+                    <td>03</td>
+                    <td>Bayes Nets II</td>
+                    <td></td>
+                    <td><a href="https://www.youtube.com/watch?v=FUnOdyZZAaE">CS188 BN Part 2</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 11</td>
+                    <td>03</td>
+                    <td>Bayesian Filters</td>
+                    <td>HW 2 (Kalman Filters);<br>Due Feb 13</td>
+                    <td>TBF 2.3-2.4;<br><a href="https://www.youtube.com/watch?v=xamzdNUN1o0">CS287 #11</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 18</td>
+                    <td>04</td>
+                    <td>Kalman Filters</td>
+                    <td></td>
+                    <td>TBF 3.1-3.3; <a href="https://www.youtube.com/watch?v=DE6Jn2cB4J4">Video</a>;<br>
+                    <a href="https://www.youtube.com/watch?v=eCjffhEeQyw">CS287 #12</a>;
+                    <a href="https://youtu.be/XzZt-2D5zS4?feature=shared">CS545 #18</a>
+                    </td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 18</td>
+                    <td>04</td>
+                    <td>Particle Filters</td>
+                    <td></td>
+                    <td>TBF 4.3; <a href="https://www.youtube.com/watch?v=pNam9hbwg4g">CS188 PF</a>;<br><a href="https://www.youtube.com/watch?v=8k--yWn8_ds">CS287 #14</a>
+                    </td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 25</td>
+                    <td>05</td>
+                    <td>Motion Models;<br>Sensor Models</td>
+                    <td>Lab 2 (Monte Carlo Localization);<br>Due Feb 25</td>
+                    <td>TBF 5.1-5.3.3, 6.1-6.3.1</td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Sept 25</td>
+                    <td>05</td>
+                    <td>Localization and Mapping</td>
+                    <td></td>
+                    <td>TBF 7.1-7.4.3, 10.1-10.2</td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 02</td>
+                    <td>06</td>
+                    <td>Mathematical Programming</td>
+                    <td></td>
+                    <td><a href="https://youtu.be/hQ4UNu1P2kw?feature=shared">Lagrangian Video</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 02</td>
+                    <td>06</td>
+                    <td>Configuration Spaces</td>
+                    <td></td>
+                    <td>LP 2.1-2.6, CL 3.1-3.2, 3.7</td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 09</td>
+                    <td></td>
+                    <td><i>No Class (Fall Recess)</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 09</td>
+                    <td></td>
+                    <td><i>No Class (Fall Recess)</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 16</td>
+                    <td>07</td>
+                    <td>AIKIDO Tutorial; Guest Lectures;<br>Midterm Review</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 16</td>
+                    <td>07</td>
+                    <td>Kinematic Transformations</td>
+                    <td></td>
+                    <td>LP 3.1-3.2.1, 3.3.1, CL 3.5</td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 23</td>
+                    <td>08</td>
+                    <td><b>Midterm Exam (in class)</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 23</td>
+                    <td>08</td>
+                    <td><b>Midterm Exam (in class)</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 30</td>
+                    <td>09</td>
+                    <td>Forward and Inverse Kinematics</td>
+                    <td>HW 3 (Inverse Kinematics);<br>Due April 01</td>
+                    <td>LP 5 (before 5.1), 6.1-6.2;<br><a href="https://www.youtube.com/watch?v=nin2TbMuhR0">MR Video, Ch 6</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Oct 30</td>
+                    <td>09</td>
+                    <td>Motion Planning I</td>
+                    <td>Lab 3 (RRT for a Manipulator);<br>Due April 12</td>
+                    <td>CL 7.1; LA 5.6, 6.2.2;<br><a href="https://www.youtube.com/watch?v=bp2LoNkLX9I">MIT 6.843 #16</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 06</td>
+                    <td>10</td>
+                    <td>Motion Planning II</td>
+                    <td></td>
+                    <td>CL 7.2; LA 5.4-5.5, 7.1, 7.3;<br><a href="https://www.youtube.com/watch?v=ZDuoQRutcfk">CS287 #10</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 06</td>
+                    <td>10</td>
+                    <td>Markov Decision Processes</td>
+                    <td></td>
+                    <td>CS188 <a href="https://www.youtube.com/watch?v=4LW3H_Jinr4">MDPs I</a>, <a href="https://www.youtube.com/watch?v=ZToWj64rxvQ">MDPs II</a>;<br><a href="https://www.youtube.com/watch?v=H_9YQBN45fo">CS287 #02</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 13</td>
+                    <td>11</td>
+                    <td>Acting Under Uncertainty</td>
+                    <td></td>
+                    <td><a href="https://www.youtube.com/watch?v=19sr7yKV56I">CS 188 VPI</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 13</td>
+                    <td>11</td>
+                    <td>Task Space Regions</td>
+                    <td>Lab 4 (Task Space Regions);<br>Due April 26</td>
+                    <td><a href="https://www.ri.cmu.edu/pub_files/2011/10/dmitry_ijrr10-1.pdf">TSP Paper</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 20</td>
+                    <td>12</td>
+                    <td>Reinforcement Learning</td>
+                    <td></td>
+                    <td><a href="https://www.youtube.com/watch?v=TiXS7vROBEg">CS 188 RL</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 20</td>
+                    <td>12</td>
+                    <td>Imitation Learning</td>
+                    <td>HW 4 (Imitation Learning);<br>Due April 26</td>
+                    <td><a href="https://youtu.be/HUzyjOsd2PA?feature=shared">Berkeley Deep IL</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 26</td>
+                    <td></td>
+                    <td><i>No Class (Thanksgiving)</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Nov 26</td>
+                    <td></td>
+                    <td><i>No Class (Thanksgiving)</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Dec 04</td>
+                    <td>13</td>
+                    <td>Dynamics</td>
+                    <td></td>
+                    <td><a href="https://underactuated.csail.mit.edu/multibody.html">RT Appendix B</a>; <a href="https://www.youtube.com/watch?v=HRp6DH5M7Co">CS287 #21</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Thurs<br>Dec 04</td>
+                    <td>13</td>
+                    <td>Simulation and Sim-to-Real</td>
+                    <td></td>
+                    <td>LP 8.1.1; <a href="https://www.youtube.com/watch?v=ac_W9IgKX2c">CS287 #22</a></td>
+                    <td><a href="">Slides</a></td>
+                    <td><a href="">YouTube</a></td>
+                </tr>
+                <!-- 
+                <tr>
+                    <td>Wed<br>Apr 17</td>
+                    <td>26</td>
+                    <td>Rotation and 3D Representations</td>
+                    <td></td>
+                    <td>LP App. B; <a href="https://www.youtube.com/watch?v=1a3KhOq1938">MIT 6.4210 #06</a></td>
+                    <td><a href="https://www.dropbox.com/scl/fi/7tp8gnnavhm61v4vio1qy/Seita_Lec_26_Sp2024.pdf?rlkey=c4ewo3z19uu486fwbxxca698j&dl=0">Slides</a></td>
+                    <td><a href="https://youtu.be/YAbxMXQSpFA">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Mon<br>Apr 22</td>
+                    <td>27</td>
+                    <td>Advanced / Special Topics<br>Final Exam Review I</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="https://www.dropbox.com/scl/fi/8p4sx1qpuhdavxp4mwfie/Seita_Lec_27_Sp2024.pdf?rlkey=ilr1q5ybdeqrx5xkdxdbieia9&st=0r6451jn&dl=0">Slides</a></td>
+                    <td><a href="https://youtu.be/8FF9Ix1LPQQ">YouTube</a></td>
+                </tr>
+                <tr>
+                    <td>Wed<br>Apr 24</td>
+                    <td>28</td>
+                    <td>Final Exam Review II;<br>Course Wrap-up</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="https://www.dropbox.com/scl/fi/nuljk5oavfwpjbmk5ug2h/Seita_Lec_28_Sp2024.pdf?rlkey=0cfj9qwntgl0xzro68fmcjmwt&st=mltcrs57&dl=0">Slides</a></td>
+                    <td><a href="https://youtu.be/Ql2ARE2MGyA">YouTube</a></td>
+                </tr>
+                -->
+                <tr>
+                    <td>TBD<br>TBD</td>
+                    <td></td>
+                    <td><b>Final Exam</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
