@@ -305,3 +305,47 @@ h3 a:hover {
   bottom: 0;
   line-height: 2.5em;
 }
+
+/**************************************************/
+/* Main highlights: year column pinned on the left */
+
+/* Container for all highlights - centers content and sets max width */
+#main-highlights {
+  max-width: 45em;       /* Maximum width of the highlights section */
+  margin-left: auto;     /* Center horizontally */
+  margin-right: auto;    /* Center horizontally */
+  margin-top: 1em;       /* Space above highlights (after preview videos) */
+}
+
+/* Each individual highlight item */
+#main-highlights .list-item.highlight {
+  position: relative;                   /* Allows absolute positioning of date inside */
+  padding-left: 72px;                   /* Space for the date column (60px width + 12px gap) */
+  margin: 0 0 0.6em 0 !important;       /* Spacing: top=0, right=0, bottom=0.6em, left=0. !important overrides generic .list-item rule */
+  padding-top: 0 !important;            /* Remove any top padding. !important overrides other rules */
+  padding-bottom: 0 !important;         /* Remove any bottom padding. !important overrides other rules */
+  max-width: 52em;                      /* Constrains total width of each highlight (date + text) */
+}
+
+/* The date on the left side */
+#main-highlights .list-item.highlight > p.date {
+  position: absolute;    /* Positioned absolutely within the .list-item parent */
+  left: 0;              /* Aligned to the left edge of parent */
+  top: 0;               /* Aligned to the top of parent */
+  width: 60px;          /* Fixed width for the date column */
+  margin: 0;            /* No extra margin */
+  padding: 0;           /* No extra padding */
+  color: #a0a8b0;       /* Gray color for the date */
+  line-height: 1.5;     /* Line height matching the text content */
+  font-size: 1em;       /* Standard font size */
+}
+
+/* The text content of each highlight */
+#main-highlights .list-item.highlight > span {
+  display: inline-block; /* Allows the text to flow naturally while respecting width constraints */
+  max-width: none;       /* No max width on span (width controlled by parent's max-width instead) */
+  margin: 0;             /* No extra margin */
+  padding: 0;            /* No extra padding */
+  line-height: 1.5;      /* Spacing between lines of text */
+  font-size: 1em;        /* Standard font size */
+}
