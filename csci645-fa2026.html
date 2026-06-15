@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCI 645 Fall 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Apply saved theme before first paint to prevent flash -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('csci645-theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme',
+                saved ? saved : (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
+
+    <style>
+        /* ============================================================
+           Color tokens — all colors reference these variables
+           ============================================================ */
+        :root {
+            --bg:               #f5f6f8;
+            --card-bg:          #ffffff;
+            --text:             #1e2230;
+            --text-muted:       #54606d;
+            --header-bg:        #1c2e42;
+            --header-text:      #ffffff;
+            --header-sub:       #93b3cc;
+            --accent:           #1a6eb5;
+            --link:             #1a6eb5;
+            --table-head-bg:    #1c2e42;
+            --table-head-txt:   #ffffff;
+            --row-hover:        #f0f6fc;
+            --row-noclass-bg:   #f9fafb;
+            --row-noclass-txt:  #aaaaaa;
+            --row-event-bg:     #fdf4e3;
+            --border:           #e6e8ec;
+            --shadow:           rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg:               #131822;
+            --card-bg:          #1b2232;
+            --text:             #cdd8e8;
+            --text-muted:       #8898ac;
+            --header-bg:        #0c1420;
+            --header-text:      #cdd8e8;
+            --header-sub:       #567a95;
+            --accent:           #52a8e0;
+            --link:             #52a8e0;
+            --table-head-bg:    #0c1420;
+            --table-head-txt:   #cdd8e8;
+            --row-hover:        #1e2d44;
+            --row-noclass-bg:   #161d2b;
+            --row-noclass-txt:  #5a7088;
+            --row-event-bg:     #272010;
+            --border:           #283040;
+            --shadow:           rgba(0, 0, 0, 0.35);
+        }
+
+        /* ============================================================
+           Base
+           ============================================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Asap', sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+        i { font-style: italic; }
+        b { font-weight: 700; }
+
+        /* ============================================================
+           Page header
+           ============================================================ */
+        .page-header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 2.2rem 1.5rem 1.8rem;
+            text-align: center;
+            position: relative;
+            transition: background 0.2s ease;
+        }
+
+        .page-header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            color: var(--header-text);
+        }
+
+        .page-header .subtitle {
+            font-size: 1.05rem;
+            color: var(--header-sub);
+            margin-top: 0.35rem;
+        }
+
+        .page-header .back-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--header-sub);
+        }
+        .page-header .back-link:hover {
+            color: var(--header-text);
+            text-decoration: none;
+        }
+
+        /* Day / Night toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 1.1rem;
+            right: 1.2rem;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: var(--header-text);
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background 0.15s;
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.24);
+        }
+
+        /* ============================================================
+           Content wrapper
+           ============================================================ */
+        .container {
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ============================================================
+           Info cards
+           ============================================================ */
+        .card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            padding: 1.35rem 1.6rem;
+            margin-bottom: 1.1rem;
+            box-shadow: 0 1px 3px var(--shadow);
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card h3 {
+            font-size: 0.77rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--accent);
+            border-left: 3px solid var(--accent);
+            padding-left: 0.55rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            margin-bottom: 0.45rem;
+            color: var(--text);
+        }
+        .card p:last-child { margin-bottom: 0; }
+
+        .card ul {
+            list-style: disc;
+            margin-left: 1.4rem;
+            margin-top: 0.25rem;
+            color: var(--text);
+        }
+        .card ul li { margin-bottom: 0.35rem; }
+        .card ul li:last-child { margin-bottom: 0; }
+
+        .card ul.sub-list {
+            list-style: circle;
+            margin-top: 0.15rem;
+            margin-bottom: 0;
+        }
+
+        .spacer { margin-top: 0.6rem; }
+
+        /* Grading breakdown table */
+        .grade-table {
+            border-collapse: collapse;
+            margin-top: 0.55rem;
+            font-size: 0.93rem;
+        }
+        .grade-table td {
+            padding: 0.2rem 1.5rem 0.2rem 0;
+            color: var(--text);
+            vertical-align: top;
+        }
+        .grade-table td:last-child {
+            font-weight: 600;
+            padding-right: 0;
+            text-align: right;
+        }
+        .grade-table tr.total-row td {
+            border-top: 1px solid var(--border);
+            padding-top: 0.3rem;
+            font-weight: 700;
+        }
+
+        /* ============================================================
+           Syllabus section header + notes
+           ============================================================ */
+        .syllabus-header {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            margin-top: 0.4rem;
+        }
+
+        .syllabus-notes {
+            font-size: 0.91rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .syllabus-notes ul {
+            list-style: disc;
+            margin-left: 1.4rem;
+        }
+        .syllabus-notes ul li { margin-bottom: 0.25rem; }
+
+        /* ============================================================
+           Syllabus table
+           ============================================================ */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px var(--shadow);
+        }
+
+        .syllabus-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: var(--card-bg);
+            transition: background 0.2s ease;
+        }
+
+        .syllabus-table thead tr {
+            background: var(--table-head-bg);
+        }
+
+        .syllabus-table th {
+            padding: 0.65rem 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            color: var(--table-head-txt);
+        }
+
+        .syllabus-table td {
+            padding: 0.65rem 0.75rem;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .syllabus-table tbody tr:last-child td { border-bottom: none; }
+        .syllabus-table tbody tr:hover td { background: var(--row-hover); }
+
+        .syllabus-table td a { color: var(--link); }
+        .syllabus-table td a:hover { text-decoration: underline; }
+
+        .date-cell {
+            white-space: nowrap;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .no-class-row td {
+            color: var(--row-noclass-txt) !important;
+            font-style: italic;
+            background: var(--row-noclass-bg) !important;
+        }
+        .no-class-row:hover td { background: var(--row-noclass-bg) !important; }
+
+        .event-row td {
+            background: var(--row-event-bg) !important;
+        }
+        .event-row:hover td { background: var(--row-event-bg) !important; }
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle day/night mode">&#9790; Night</button>
+        <h1>CSCI 645: Robot Manipulation</h1>
+        <div class="subtitle">Fall 2026 &mdash; University of Southern California</div>
+        <a href="https://danielseita.github.io" class="back-link">&larr; danielseita.github.io</a>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h3>Course Staff</h3>
+            <p>Professor: Daniel Seita (Office: GCS 305A)</p>
+            <p>Use Brightspace to contact the course staff.</p>
+        </div>
+
+        <div class="card">
+            <h3>Lectures</h3>
+            <p>Thursdays: 4:00 pm to 7:20 pm. Location: TBD.</p>
+            <p>We will have an extended <b>25-minute break</b> approximately halfway through each session to give everyone time to rest, use the restroom, grab a snack, etc.</p>
+            <p>We will record lectures and share them on this website (see the "Recording" column below).</p>
+        </div>
+
+        <div class="card">
+            <h3>Office Hours</h3>
+            <p>Daniel: Thursdays 11:00 am to 12:00 pm (GCS 305A), except for Thursdays when there is no class or when I am traveling. In those cases, I will offer alternative times, but send me an email if you want to meet at other times.</p>
+        </div>
+
+        <div class="card">
+            <h3>Course Description</h3>
+            <p>This course covers state-of-the-art advances in robot manipulation, focusing on how robots physically interact with and affect their environments through actions such as grasping, pushing, pick-and-place, tool use, and dynamic contact behaviors. Due to recent advances in robot learning, robot perception, and robot hardware, robot manipulation has experienced tremendous interest and growth in recent years. Despite this progress, real-world manipulation remains fundamentally hard, and progress can be tricky to measure due to lack of standardized benchmarks and cherry-picked demonstrations.</p>
+            <p class="spacer">Students will study core principles of manipulation (including perception, control, planning, and dynamics) with modern data-driven approaches such as imitation learning, reinforcement learning, diffusion-based policy generation, and multimodal (e.g., vision-language-tactile) reasoning. While assignments will use simulators for faster and more reproducible work, this class also discusses how to get such systems to work more reliably in unstructured real-world settings, so that students develop an appreciation of the challenges of building such systems.</p>
+            <p class="spacer">The class mostly consists of instructor-led lectures but will have some student-led discussions of recent research papers. There will also be a substantial final project. This class is aimed at PhD students doing research in this topic; advanced undergraduates and master's students are welcome to enroll with permission of the instructor.</p>
+        </div>
+
+        <div class="card">
+            <h3>Learning Objectives</h3>
+            <p>This course is intended to:</p>
+            <ul>
+                <li>Equip students with knowledge of both core principles and recent data-driven methods for robot manipulation.</li>
+                <li>Develop skills to understand, implement, and experiment with state-of-the-art manipulation-related algorithms for assignments and the final project.</li>
+                <li>Provide experience reading, understanding, analyzing, and debating papers from robotics venues.
+                    <ul class="sub-list">
+                        <li>Conferences: CoRL, RSS, ICRA, IROS, ISRR, ISER, WAFR.</li>
+                        <li>Journals: T-RL, RA-L, T-RO, IJRR, AURO, Science Robotics.</li>
+                    </ul>
+                </li>
+                <li>Encourage students to develop new ideas for research projects in robot manipulation.</li>
+                <li>Improve academic writing and presentation skills.</li>
+            </ul>
+            <p class="spacer">At the end of this course, students will be able to:</p>
+            <ul>
+                <li>Implement and experiment with state-of-the-art manipulation-related algorithms.</li>
+                <li>Analyze and intelligently discuss current papers from robotics venues.</li>
+                <li>Propose new ideas for research projects in robot manipulation.</li>
+                <li>Communicate technical ideas through written reports and oral presentations.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Prerequisites</h3>
+            <p>No formal prerequisites. <i>Recommended preparation:</i> familiarity with robotics at the level of CSCI 445L or CSCI 545, and familiarity with machine learning at the level of CSCI 467. Concurrent enrollment with these courses can be helpful. Students should be comfortable programming in Python and working in a Linux/Ubuntu shell environment.</p>
+        </div>
+
+        <div class="card">
+            <h3>Reading Material</h3>
+            <p>Primary textbooks (both freely available online):</p>
+            <ul>
+                <li><i>Robot Manipulation: Perception, Planning, and Control</i>, by Russ Tedrake. <a href="https://manipulation.csail.mit.edu/index.html">Link</a>. (RT)</li>
+                <li><i>Modern Robotics</i>, by Kevin Lynch and Frank Park. <a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics">Link</a>. (MR)</li>
+            </ul>
+            <p class="spacer">Secondary textbooks (also open source):</p>
+            <ul>
+                <li><i>Underactuated Robotics</i>, by Russ Tedrake. <a href="https://underactuated.mit.edu/">Link</a>. (UR)</li>
+                <li><i>Reinforcement Learning: An Introduction</i>, by Richard Sutton and Andrew Barto. <a href="https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf">Link</a>. (SB)</li>
+            </ul>
+            <p class="spacer">Additional readings (research papers, code, etc.) will be provided as needed and will all be open-source and free to access.</p>
+        </div>
+
+        <div class="card">
+            <h3>Grading</h3>
+            <table class="grade-table">
+                <tr><td>Homework 1</td><td>20%</td></tr>
+                <tr><td>Homework 2</td><td>20%</td></tr>
+                <tr><td>In-Class (Written) Midterm</td><td>15%</td></tr>
+                <tr><td>Participation</td><td>5%</td></tr>
+                <tr><td>Class Presentation</td><td>10%</td></tr>
+                <tr><td>Final Project</td><td>30%</td></tr>
+                <tr class="total-row"><td>Total</td><td>100%</td></tr>
+            </table>
+            <p class="spacer">We will use Brightspace for communication and grading. We do not use a fixed grading scale (e.g., 90&ndash;100 = A); grades are computed at the end of the semester. Missing a homework assignment will reduce the maximum achievable grade by one letter. Students will be allowed a small number of late days for the two homework assignments; late days cannot be used for the final project.</p>
+            <p class="spacer">In lieu of a final exam, students will work on a substantial final project and may work in groups of 1&ndash;2 (with expectations scaling for teams of two). The final project grade is subdivided into: project presentation (1/5), final written report (1/5), and quality of results (3/5). The final project report should ideally be of sufficient quality to form the basis of a future submission to a top-tier robotics conference.</p>
+        </div>
+
+        <div class="card">
+            <h3>Acknowledgments</h3>
+            <p>TBD.</p>
+        </div>
+
+        <!--
+            To add a slide or recording link per row, use:
+            <td><a href="">Slides</a></td>
+            <td><a href="">YouTube</a></td>
+        -->
+
+        <p class="syllabus-header">Syllabus (Subject to Change)</p>
+        <div class="syllabus-notes">
+            <ul>
+                <li>See Brightspace for links to assignments. Unless stated otherwise, all deadlines are at 11:59 PM (Pacific Time).</li>
+                <li>Reading abbreviations: RT = <i>Robot Manipulation</i> (Tedrake); MR = <i>Modern Robotics</i> (Lynch &amp; Park); UR = <i>Underactuated Robotics</i> (Tedrake); SB = <i>Reinforcement Learning</i> (Sutton &amp; Barto).</li>
+            </ul>
+        </div>
+
+        <div class="table-wrap">
+            <table class="syllabus-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Week</th>
+                        <th>Topic</th>
+                        <th>Assignment</th>
+                        <th>Readings / References</th>
+                        <th>Slides</th>
+                        <th>Recording</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Aug 27</td>
+                        <td>01</td>
+                        <td>Course introduction; review of basic robotics concepts; examples of recent manipulation research</td>
+                        <td>Sign up for paper presentation dates</td>
+                        <td>MR, Ch 2 and 3.1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Sep 03</td>
+                        <td>02</td>
+                        <td>Forward and inverse kinematics; pick-and-place methods</td>
+                        <td>HW 1 (released)</td>
+                        <td>MR, Ch 4 (excl. 4.1) and 6.1;<br>RT, Ch 3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Sep 10</td>
+                        <td>03</td>
+                        <td>Computer vision and 3D geometric perception for robot manipulation</td>
+                        <td></td>
+                        <td>RT, Ch 4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Sep 17</td>
+                        <td>04</td>
+                        <td>Robot simulators; sim-to-real transfer</td>
+                        <td>HW 1 due</td>
+                        <td>RT, Ch 2 (excl. control sections);<br>NVIDIA survey paper</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Sep 24</td>
+                        <td>05</td>
+                        <td>Motion planning: sampling and optimization</td>
+                        <td>HW 2 (released)</td>
+                        <td>MR, Ch 9.2 and 10 (up to 10.5);<br>RT, Ch 6 (excl. graphs of convex sets)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Oct 01</td>
+                        <td>06</td>
+                        <td>Imitation learning</td>
+                        <td>Project Proposal due</td>
+                        <td>UR, Ch 21;<br><a href="https://arxiv.org/abs/1811.06711">IL survey</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="no-class-row">
+                        <td class="date-cell">Thurs<br>Oct 08</td>
+                        <td></td>
+                        <td>No Class (Fall Recess)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Oct 15</td>
+                        <td>07</td>
+                        <td>Reinforcement learning</td>
+                        <td>HW 2 due</td>
+                        <td>RT, Ch 11;<br>SB, Ch 3&ndash;4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Oct 22</td>
+                        <td>08</td>
+                        <td>Model-based and model-free dynamics; robot control (manipulator, position, and force)</td>
+                        <td></td>
+                        <td>MR, Ch 8.1 and 11;<br>RT, Ch 8.1&ndash;8.3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="event-row">
+                        <td class="date-cell">Thurs<br>Oct 29</td>
+                        <td>09</td>
+                        <td><b>Midterm Exam</b> (in class, about 1 hour)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Nov 05</td>
+                        <td>10</td>
+                        <td>Robot hardware: tactile sensors, dexterous hands, and humanoids</td>
+                        <td></td>
+                        <td>RT, Ch 2.3&ndash;2.4 and 12;<br>Tactile manipulation survey</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Nov 12</td>
+                        <td>11</td>
+                        <td>Robot foundation models; vision-language-action (VLA) models</td>
+                        <td>Project Milestone due</td>
+                        <td>RT, Ch 9.4; UR, Ch 2;<br><a href="https://robotics-fm-survey.github.io/">FM survey</a>;<br><a href="https://arxiv.org/abs/2402.05741">arxiv 2402.05741</a>;<br><a href="https://arxiv.org/abs/2312.07843">arxiv 2312.07843</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thurs<br>Nov 19</td>
+                        <td>12</td>
+                        <td>Student presentations; student-selected topic</td>
+                        <td></td>
+                        <td>TBA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="no-class-row">
+                        <td class="date-cell">Thurs<br>Nov 26</td>
+                        <td></td>
+                        <td>No Class (Thanksgiving)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="event-row">
+                        <td class="date-cell">Thurs<br>Dec 03</td>
+                        <td>13</td>
+                        <td>Student presentations (cont.); course summary and remarks;<br><b>Final project presentations</b></td>
+                        <td>Final Report due<br>Sun Dec 06</td>
+                        <td>TBA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        var btn = document.getElementById('theme-toggle');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            btn.innerHTML = theme === 'dark' ? '&#9728; Day' : '&#9790; Night';
+            localStorage.setItem('csci645-theme', theme);
+        }
+
+        // Set initial button label to match the theme applied by the head script
+        var initial = document.documentElement.getAttribute('data-theme') || 'light';
+        btn.innerHTML = initial === 'dark' ? '&#9728; Day' : '&#9790; Night';
+
+        btn.addEventListener('click', function () {
+            var current = document.documentElement.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+
+</body>
+</html>
